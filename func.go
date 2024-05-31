@@ -7,15 +7,20 @@ import (
 func main() {
 	//No input and no output
 	showtopic()
+	showmessage("No input and no output")
 	//Have input and no output
-	showmessage("Let 's go to build a function")
+	showmessage("Have input and no output")
 	//No input and have output
+	showmessage("No input and have output")
 	showmvalue(sumincome())
 	//Have input and have output
+	showmessage("Have input and have output")
 	var score int
 	showmessage("Please input the score")
 	fmt.Scanf("%d", &score)
 	showmessage(grade(score))
+	//Return multiple value
+	fmt.Println(scoreandgrade(score))
 
 }
 
@@ -45,9 +50,21 @@ func sumincome() int {
 func grade(score int) string {
 	var g string
 	if score >= 50 {
-		g = "คะแนน S"
+		g = " S"
 	} else {
-		g = "คะแนน F"
+		g = " F"
 	}
 	return g
+}
+
+// Return multiple value
+func scoreandgrade(score int) (int,string) {
+	var point int = score
+	var g string
+	if score >= 50 {
+		g = " S"
+	} else {
+		g = " F"
+	}
+	return point,g
 }
