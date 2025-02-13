@@ -7,10 +7,6 @@ import (
 	"strings"
 )
 
-// Change these boolean values to control whether you see
-// the expected answer and/or hints.
-const showExpectedResult = false
-const showHints = false
 
 // calculate() returns the the result of adding 2 numbers
 // after parsing them from strings
@@ -38,7 +34,6 @@ func Calculate(value1 string, value2 string) float64 {
 
 	// Calculate and return the result
 	result := v1 + v2
-	fmt.Println(result)
 
 	return result
 }
