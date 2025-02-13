@@ -35,5 +35,12 @@ func main() {
 	operation1 := "/"
 	result1 := linkedin.CalculateAdvance(value3, value4, operation1)
 	fmt.Println(result1)
+	fmt.Println("-------------------------")
+	jsonString := `[{"name":"apple","price":2.99,"quantity":3},
+  {"name":"orange","price":1.50,"quantity":8},
+  {"name":"banana","price":0.49,"quantity":12}]`
+
+	jsonformat := linkedin.GetCartFromJson(jsonString)
+	fmt.Println(jsonformat)
 
 }

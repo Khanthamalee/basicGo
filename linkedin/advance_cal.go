@@ -11,18 +11,18 @@ func CalculateAdvance(input1 string, input2 string, operation string) float64 {
 	var result float64
 	value1 := convertInputToValue(input1)
 	value2 := convertInputToValue(input2)
-	if operation == "+" {
-		result := addValues(value1, value2)
-		return result
-	} else if operation == "-" {
-		result := subtractValues(value1, value2)
-		return result
-	} else if operation == "*" {
-		result := multiplyValues(value1, value2)
-		return result
-	} else if operation == "/" {
-		result := divideValues(value1, value2)
-		return result
+
+	switch operation {
+	case "+":
+		result = addValues(value1, value2)
+	case "-":
+		result = subtractValues(value1, value2)
+	case "*":
+		result = multiplyValues(value1, value2)
+	case "/":
+		result = divideValues(value1, value2)
+	default:
+		panic("Invalid operation")
 	}
 	return result
 }
@@ -31,8 +31,8 @@ func convertInputToValue(input string) float64 {
 	s1 := strings.TrimSpace(input)
 	v1, err := strconv.ParseFloat(s1, 64)
 	if err != nil {
-		fmt.Println("Error : ", err)
-		panic("Value must be a number")
+		message := fmt.Sprintf(" %v Error : %v ", input, err)
+		panic(message)
 	}
 	return v1
 }
