@@ -24,5 +24,16 @@ func main() {
 	var bananas = linkedin.CartItem{Name: "banana", Price: .49, Quantity: 12}
 	cart = append(cart, apples, oranges, bananas)
 	fmt.Println(linkedin.CalculateTotal(cart))
+	fmt.Println("-------------------------")
+	value1 := "10"
+	value2 := "5.5"
+	operation := "+"
+	result := linkedin.CalculateAdvance(value1, value2, operation)
+	fmt.Println(result)
+	value3 := "100"
+	value4 := "2"
+	operation1 := "/"
+	result1 := linkedin.CalculateAdvance(value3, value4, operation1)
+	fmt.Println(result1)
 
 }

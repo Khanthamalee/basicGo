@@ -12,8 +12,8 @@ func CalculateTotal(cart []CartItem) float64 {
 	// Your code goes here.
 	var sum float64
 	for i := range cart {
-		amount := cart[i].Price * float64(cart[i].Quantity)
-		sum = sum + amount
+		sum += cart[i].Price * float64(cart[i].Quantity)
+
 		//fmt.Println(sum)
 	}
 	return sum
